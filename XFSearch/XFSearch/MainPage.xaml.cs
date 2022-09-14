@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Xamarin.CommunityToolkit.Extensions;
 using Xamarin.Forms;
 
 namespace XFSearch
@@ -21,7 +22,7 @@ namespace XFSearch
             page.Init(this.VendCD.Text, this.VendNM.Text); //메인 화면의 검색 값을 검색화면으로 가져 갈 경우
             page.ReturnVendInfoEvent += Page_ReturnVendInfoEvent;
 
-            await this.Navigation.PushAsync(page);
+            await this.Navigation.ShowPopupAsync(page);
         }
 
         /// <summary>

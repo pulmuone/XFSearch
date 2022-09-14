@@ -9,8 +9,7 @@ using Xamarin.Forms.Xaml;
 
 namespace XFSearch
 {    
-    [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class SearchVendorPage : ContentPage
+    public partial class SearchVendorPage
     {
         //delegate 타입선언
         public delegate void ReturnVendInfoEventHandler(string vendCd, string vendNm);
@@ -32,7 +31,7 @@ namespace XFSearch
         }
 
 
-        private async void OKButton_Clicked(object sender, EventArgs e)
+        private void OKButton_Clicked(object sender, EventArgs e)
         {
             //이전 화면으로 선택된 값을 돌려 준다.
             //컬렉션 리스트에서 해당 row선택하는 방법으로 하면 됩니ㅏㄷ.
@@ -41,12 +40,12 @@ namespace XFSearch
                 ReturnVendInfoEvent(this.VendCD.Text, this.VendNM.Text);
             }
 
-            await this.Navigation.PopAsync();
+            Dismiss(true);
         }
 
-        private async void OKCancel_Clicked(object sender, EventArgs e)
+        private void OKCancel_Clicked(object sender, EventArgs e)
         {
-            await this.Navigation.PopAsync();
+            Dismiss(false);
         }
     }
 }

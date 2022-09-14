@@ -1,39 +1,42 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-			 x:Class="XFSearch.SearchVendorPage"
-			 Title="거래처 검색">
-	<ContentPage.Content>
-		<Grid RowDefinitions="50, 50, 50, *" ColumnDefinitions="100, *">
-			<Grid Grid.Row="0" Grid.Column="0">
-				<Label Text="거래처 코드"
+<xct:Popup xmlns="http://xamarin.com/schemas/2014/forms"
+		   xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+		   xmlns:xct="clr-namespace:Xamarin.CommunityToolkit.UI.Views;assembly=Xamarin.CommunityToolkit"
+		   xmlns:local="clr-namespace:XFSearch;assembly=XFSearch"
+		   Size="{x:Static local:PopupSize.Medium}"
+		   IsLightDismissEnabled="False"
+		   x:Class="XFSearch.SearchVendorPage">
+
+	<Grid RowDefinitions="50, 50, 50, *" ColumnDefinitions="100, *">
+		<Grid Grid.Row="0" Grid.Column="0">
+			<Label Text="거래처 코드"
 					   HorizontalOptions="FillAndExpand"
 					   HorizontalTextAlignment="End" 
 					   VerticalTextAlignment="Center"/>
-			</Grid>
-
-			<Grid Grid.Row="0" Grid.Column="1">
-				<Entry x:Name="VendCD"/>
-			</Grid>
-
-			<Grid Grid.Row="1" Grid.Column="0">
-				<Label Text="거래처 이름"
-					   HorizontalOptions="FillAndExpand"
-					   HorizontalTextAlignment="End" 
-					   VerticalTextAlignment="Center"/>
-			</Grid>
-
-			<Grid Grid.Row="1" Grid.Column="1">
-				<Entry x:Name="VendNM"/>
-			</Grid>
-
-			<Grid Grid.Row="2" Grid.ColumnSpan="2">
-				<StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
-					<Button Text="취소" x:Name="OKCancel" Clicked="OKCancel_Clicked"/>
-					<Button Text="적용" x:Name="OKButton" Clicked="OKButton_Clicked"/>
-				</StackLayout>
-			</Grid>
-
 		</Grid>
-	</ContentPage.Content>
-</ContentPage>
+
+		<Grid Grid.Row="0" Grid.Column="1">
+			<Entry x:Name="VendCD"/>
+		</Grid>
+
+		<Grid Grid.Row="1" Grid.Column="0">
+			<Label Text="거래처 이름"
+					   HorizontalOptions="FillAndExpand"
+					   HorizontalTextAlignment="End" 
+					   VerticalTextAlignment="Center"/>
+		</Grid>
+
+		<Grid Grid.Row="1" Grid.Column="1">
+			<Entry x:Name="VendNM"/>
+		</Grid>
+
+		<Grid Grid.Row="2" Grid.ColumnSpan="2">
+			<StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+				<Button Text="취소" x:Name="OKCancel" Clicked="OKCancel_Clicked"/>
+				<Button Text="적용" x:Name="OKButton" Clicked="OKButton_Clicked"/>
+			</StackLayout>
+		</Grid>
+
+	</Grid>
+
+</xct:Popup>
